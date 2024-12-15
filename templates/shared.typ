@@ -18,7 +18,7 @@
     radius: 3pt,
   )
 
-  show raw: text.with(font: fonts.monospace + fonts.sans, size: 1em)
+  // show raw: text.with(font: fonts.monospace + fonts.sans, size: 1em)
 
   set heading(numbering: (..numbers) => {
     let level = numbers.pos().len();

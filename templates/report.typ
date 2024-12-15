@@ -64,8 +64,23 @@
     #pagebreak()
   ]
 
+  outline(indent: auto)   
+  pagebreak()
+
   set align(left + top)
   set par(justify: true, first-line-indent: 2em, leading: line_height)
+
+
+  let style-number(number) = text(gray)[#number]
+  show raw.where(block: true): it => block(
+    fill: luma(240),
+    inset: 10pt,
+    radius: 4pt,
+    width: 100%,
+  )[#grid(columns: (1em, 1fr), align: (right, left), column-gutter: 0.7em, row-gutter: 0.6em, ..it.lines
+    .enumerate()
+    .map(((i, line)) => (style-number(i + 1), line))
+    .flatten())]
 
   body
 }
